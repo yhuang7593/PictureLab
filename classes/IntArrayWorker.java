@@ -44,7 +44,55 @@ public class IntArrayWorker
     }
     return total;
   }
-  
+/** Write a getCount method in the IntArrayWorker class
+ * that returns the count of the number of times a passed integer value
+ * is found in the matrix. There is already a method to test this in IntArrayWorkerTester.
+ * Just uncomment the method testGetCount() and the call to it in the main method of
+ * IntArrayWorkerTester.
+**/
+ public int getCount(int val) {
+  int total = 0;
+  for (int row = 0; row <matrix.length; row++)
+  {
+    for (int col = 0; col<matrix[0].length; col++)
+    {
+      if (matrix[row][col] == val)
+      {
+        total++;
+      }
+    }
+  }
+  return total;
+  }
+
+public int getLargest()
+{
+  int largest = 0;
+  for (int row = 0; row <matrix.length; row++)
+  {
+    for (int col = 0; col<matrix[0].length; col++)
+    {
+      if (matrix[row][col] > largest)
+      {
+        largest = matrix[row][col];
+      }
+    }
+  }
+  return largest;
+}
+
+public int getColTotal(int val)
+{
+  int total = 0;
+  for (int row = 0; row <matrix.length; row++)
+  {
+    int col = val;
+    total += matrix[row][col];
+    }
+
+  return total;
+}
+
   /**
    * Method to fill with an increasing count
    */
