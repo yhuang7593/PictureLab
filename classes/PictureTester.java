@@ -41,6 +41,14 @@ public class PictureTester
     beach.explore();
   }
 
+  public static void testChallenge()
+  {
+    Picture beach = new Picture("water.jpg");
+    beach.explore();
+    beach.challenge();
+    beach.explore();
+  }
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -107,5 +115,6 @@ public class PictureTester
     testNegate();
     testKeepOnlyBlue();
     testGrayscale();
+    testChallenge();
   }
 }
