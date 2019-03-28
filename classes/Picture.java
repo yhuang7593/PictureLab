@@ -223,9 +223,6 @@ public class Picture extends SimplePicture
         Pixel leftPixel = null;
         Pixel rightPixel = null;
         int height = pixels.length;
-        if (pixels[0].length < height) {
-            height = pixels[0].length;
-        }
         int width = pixels[0].length;
         for (int row = 0; row < height; row++)
         {
@@ -258,10 +255,37 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+        count++;
       }
     }
+    System.out.println(count);
   }
-  
+
+  public void mirrorArms()
+  {
+      int mirrorPoint = 196;
+      Pixel topPixel = null;
+      Pixel botPixel = null;
+      int count = 0;
+      Pixel[][] pixels = this.getPixels2D();
+
+      // loop through the rows
+      for (int row = 158; row < mirrorPoint; row++)
+      {
+          // loop from 13 to just before the mirror point
+          for (int col = 105; col < 300; col++)
+          {
+
+              topPixel = pixels[row][col];
+              botPixel = pixels[row]
+                      [mirrorPoint - col + mirrorPoint];
+              botPixel.setColor(topPixel.getColor());
+              count++;
+          }
+      }
+      System.out.println(count);
+  }
+
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture

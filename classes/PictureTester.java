@@ -97,6 +97,14 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+
+  public static void testMirrorArms()
+  {
+    Picture snowman = new Picture ("snowman.jpg");
+    snowman.mirrorArms();
+    snowman.explore();
+
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -113,7 +121,8 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -130,7 +139,7 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
@@ -150,6 +159,6 @@ public class PictureTester
     //testMirrorHorizontal();
     //testFixUnderwater();
     //testMirrorHorizontalBotToTop();
-    testMirrorDiagonal();
+    //testMirrorDiagonal();
   }
 }
