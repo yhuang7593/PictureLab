@@ -124,6 +124,6 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testGrayscale();
     testMirrorVerticalRightToLeft();
-    //testFixUnderwater();
+    testFixUnderwater();
   }
 }
