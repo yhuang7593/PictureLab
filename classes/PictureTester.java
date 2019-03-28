@@ -41,12 +41,12 @@ public class PictureTester
     beach.explore();
   }
 
-  public static void testChallenge()
+  public static void testFixUnderwater()
   {
-    Picture beach = new Picture("water.jpg");
-    beach.explore();
-    beach.challenge();
-    beach.explore();
+    Picture water = new Picture("water.jpg");
+    water.explore();
+    water.fixUnderwater();
+    water.explore();
   }
 
   /** Method to test mirrorVertical */
@@ -55,6 +55,14 @@ public class PictureTester
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
   
@@ -90,21 +98,21 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
-    testMirrorTemple();
+    //testMirrorVertical();
+    //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
@@ -112,9 +120,10 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testNegate();
-    testKeepOnlyBlue();
-    testGrayscale();
-    testChallenge();
+    //testNegate();
+    //testKeepOnlyBlue();
+    //testGrayscale();
+    testMirrorVerticalRightToLeft();
+    //testFixUnderwater();
   }
 }
