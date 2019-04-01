@@ -469,15 +469,18 @@ public class Picture extends SimplePicture
           }
   }
 
-  public int[] getAverageForColumn(int col)
-  {
-      Pixel[][] pixels = this.getPixels2D();
-      int[] average= new int[pixels[col].length];
-      for(int row=0; row<pixels.length; row++){
-          average[row]= (pixels[row][col].getBlue()+pixels[row][col].getRed()+pixels[row][col].getGreen())/3;
-      }
-      return average;
-  }
+    public int[] getAverageForColumn(int col)
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel thisPixel = null;
+        int[] averageArray = new int[pixels[col].length];
+        for (int row = 0; row < pixels.length; row++)
+        {
+            thisPixel = pixels[row][col];
+            averageArray[row] = thisPixel.getRed() + thisPixel.getGreen() + thisPixel.getBlue()/ 3;
+        }
+        return averageArray;
+    }
   
   
   /* Main method for testing - each class in Java can have a main 
