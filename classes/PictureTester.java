@@ -111,12 +111,25 @@ public class PictureTester
     gull.mirrorGull();
     gull.explore();
   }
+
+  public static void testCopy2(){
+    Picture canvas = new Picture("temple.jpg");
+    canvas.copy2(canvas,300,400,0,100,100,100 );
+    canvas.explore();
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
     canvas.createCollage();
+    canvas.explore();
+  }
+
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
     canvas.explore();
   }
   
@@ -146,10 +159,9 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    //testCopy2();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
@@ -159,13 +171,13 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
     //testNegate();
-    //testKeepOnlyBlue();
     //testGrayscale();
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
     //testFixUnderwater();
     //testMirrorHorizontalBotToTop();
-    //testMirrorDiagonal();
-    testMirrorGull();
+    //testMirrorGull();
+    //testCollage();
+    testMyCollage();
   }
 }

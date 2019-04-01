@@ -342,20 +342,20 @@ public class Picture extends SimplePicture
     }   
   }
 
-    public void copy2(Picture fromPic, int startRow, int endRow, int startCol, int endCol) {
+    public void copy2(Picture fromPic, int fromStartRow, int fromEndRow, int fromStartCol, int fromEndCol, int toStartRow, int toStartCol)
+    {
         Pixel fromPixel = null;
         Pixel toPixel = null;
         Pixel[][] toPixels = this.getPixels2D();
         Pixel[][] fromPixels = fromPic.getPixels2D();
-
-        for (int fromRow = 0, toRow = startRow;
-             fromRow < fromPixels.length &&
-                     toRow < endRow;
+        for (int fromRow = fromStartRow, toRow = toStartRow;
+             fromRow < fromEndRow &&
+                     toRow < toPixels.length;
              fromRow++, toRow++)
         {
-            for (int fromCol = 0, toCol = startCol;
-                 fromCol < fromPixels[0].length &&
-                         toCol < endCol;
+            for (int fromCol = fromStartCol, toCol = toStartCol;
+                 fromCol < fromEndCol &&
+                         toCol < toPixels[0].length;
                  fromCol++, toCol++)
             {
                 fromPixel = fromPixels[fromRow][fromCol];
@@ -380,6 +380,21 @@ public class Picture extends SimplePicture
     this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
+  }
+
+  public void myCollage()
+  {
+      Picture gull = new Picture("seagull.jpg");
+      Picture flower2 = new Picture("flower2.jpg");
+      Picture temple = new Picture ("temple.jpg");
+      this.copy2(gull,300,450,350,450,200,0);
+      this.copy2(flower2, 0,100,0,100,0,0);
+      this.copy2(temple, 200,350,300,400,300,200);
+      this.fixUnderwater();
+      this.negate();
+      this.zeroBlue();
+      this.mirrorDiagonal();
+
   }
   
   
