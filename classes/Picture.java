@@ -229,4 +229,6 @@ public class Picture extends SimplePicture
     beach.explore();
   }
   
+  
+  
 } // this } is the end of class Picture, put all new methods before this
