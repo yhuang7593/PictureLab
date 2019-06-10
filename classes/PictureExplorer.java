@@ -17,6 +17,7 @@ import javax.swing.border.*;
  * @author Keith McDermottt, gte047w@cc.gatech.edu
  * @author Barb Ericson ericson@cc.gatech.edu
  */
+
 public class PictureExplorer implements MouseMotionListener, ActionListener, MouseListener
 {
  
@@ -800,8 +801,11 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("beach.jpg");
+    /*Picture pix = new Picture("beach.jpg");
+    pix.explore();*/
+    /*Picture pix = new Picture("caterpillar.jpg");
+    pix.explore();*/
+    Picture pix = new Picture("wall.jpg");
     pix.explore();
   }
-  
 }
