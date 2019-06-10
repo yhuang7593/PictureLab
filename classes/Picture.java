@@ -260,6 +260,41 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void grayscale()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel pixel = null;
+    int total = 0;
+    int average = 0;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        total = 0;
+        pixel = pixels[row][col];
+        total = total + pixel.getRed();
+        total = total + pixel.getGreen();
+        total = total + pixel.getBlue();
+        average = total / 3;
+        pixel.setColor(new Color(average, average, average));
+      }
+    }
+  }
+  
+  public void fixUnderwater()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel pixel = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        pixel = pixels[row][col];
+        pixel.setRed(pixel.getRed() * 3);
+      }
+    }
+  }
+  
   
   
 } // this } is the end of class Picture, put all new methods before this
