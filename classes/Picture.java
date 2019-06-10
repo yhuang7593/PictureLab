@@ -229,6 +229,20 @@ public class Picture extends SimplePicture
     beach.explore();
   }
   
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel pixel = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        pixel = pixels[row][col];
+        pixel.setRed(0);
+        pixel.setGreen(0);
+      }
+    }
+  }
   
   
   
